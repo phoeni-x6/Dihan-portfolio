@@ -4,7 +4,8 @@ import ProjectCard from "@/components/ProjectCard";
 export default function Home() {
   return (
     <>
-      <main className="bg-black text-white">
+      
+      <main>
         <Hero />
         <TechStack />
         <Services />
@@ -16,6 +17,7 @@ export default function Home() {
     </>
   );
 }
+
 
 /* ================= HERO ================= */
 
@@ -57,7 +59,7 @@ function Hero() {
           {/* SOCIAL LINKS */}
 <div className="mt-10 flex items-center gap-5 justify-center md:justify-start">
   <SocialLink
-    href="https://github.com/USERNAME"
+    href="https://github.com/phoeni-x6"
     label="GitHub"
     icon={
       <svg viewBox="0 0 24 24" className="h-5 w-5">
@@ -83,7 +85,7 @@ function Hero() {
   />
 
   <SocialLink
-  href="https://discord.com/users/YOUR_DISCORD_USER_ID"
+  href="https://discord.com/users/779867100042362880"
   label="Discord"
   icon={
     <svg
@@ -101,7 +103,7 @@ function Hero() {
 
 
   <SocialLink
-    href="https://instagram.com/USERNAME"
+    href="https://instagram.com/dihanhewage"
     label="Instagram"
     icon={
       <svg viewBox="0 0 24 24" className="h-5 w-5">
@@ -189,23 +191,52 @@ function TechStack() {
 
 function Services() {
   return (
-    <section className="py-24 px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">Services</h2>
+    <section
+      className="py-24 px-6"
+      aria-labelledby="services-title"
+    >
+      <h2
+        id="services-title"
+        className="text-3xl font-bold text-center mb-12"
+      >
+        Services
+      </h2>
+
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
-        <ServiceCard title="Landing Pages" />
-        <ServiceCard title="Business Websites" />
-        <ServiceCard title="SEO Optimization" />
+        <ServiceCard
+          title="Landing Pages"
+          description="High-converting landing pages designed to capture leads, load fast, and perform well on search engines."
+        />
+
+        <ServiceCard
+          title="Business Websites"
+          description="Professional, responsive business websites that clearly represent your brand and build trust with customers."
+        />
+
+        <ServiceCard
+          title="Managed Web Hosting"
+          description="Reliable, secure, and fully managed hosting with updates, backups, and performance monitoring handled for you."
+        />
       </div>
     </section>
   );
 }
 
-function ServiceCard({ title }: { title: string }) {
+function ServiceCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
-    <div className="rounded-2xl bg-neutral-900 p-8">
-      <h3 className="text-xl font-semibold text-purple-400 mb-2">{title}</h3>
-      <p className="text-gray-400">
-        Clean, fast, and conversion-focused solutions.
+    <div className="rounded-2xl bg-neutral-900 p-8 border border-neutral-800 hover:border-purple-500/50 transition">
+      <h3 className="text-xl font-semibold text-purple-400 mb-3">
+        {title}
+      </h3>
+
+      <p className="text-gray-400 leading-relaxed">
+        {description}
       </p>
     </div>
   );
@@ -314,14 +345,14 @@ function Contact() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://wa.me/947XXXXXXXX"
+            href="https://wa.me/94768339970"
             className="rounded-full bg-purple-500 px-10 py-4 font-semibold text-white hover:bg-purple-400 transition"
           >
             Contact on WhatsApp
           </a>
 
           <a
-            href="mailto:your@email.com"
+            href="mailto:dihanhewage123@gmail.com"
             className="rounded-full border border-neutral-700 px-10 py-4 font-semibold text-white hover:border-purple-500 transition"
           >
             Send an Email
